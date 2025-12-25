@@ -1,0 +1,17 @@
+package com.ksa.pfm.repo;
+
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.ksa.pfm.model.Budget;
+import com.ksa.pfm.model.User;
+
+
+public interface BudgetRepo extends JpaRepository<Budget, Long> {
+
+	public List<Budget> findByUser(User user);
+	
+	public List<Budget> findByUserAndYearAndMonth(User user,Integer start,Integer end);
+	
+}
